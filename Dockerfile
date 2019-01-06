@@ -1,14 +1,10 @@
-FROM ubuntu:16.04
+#FROM resin/aarch64-debian
+FROM lsiobase/ubuntu.arm64:bionic
 
 # Install
-RUN apt-get update -y
-RUN apt-get install -y python3-pip cfv cksfv p7zip-full p7zip-rar unrar rar git
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install lit OutputCheck
-
-# Build Preparation
-RUN mkdir -p /src/
-RUN mkdir -p /src/build/
+#RUN apk add --no-cache unrar cksfv bash
+RUN apt-get update
+RUN apt-get install -y cfv cksfv p7zip-full p7zip-rar unrar
 
 # Build
 WORKDIR /src/
@@ -16,5 +12,4 @@ COPY . /src/
 RUN cd /src
 
 # Run Tests
-RUN git clone http://github.com/arfoll/unrarall.git unraralltest/
-RUN ./unraralltest/tests/run.sh
+CMD ["bash", "./unrar-script.sh"]
