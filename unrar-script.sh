@@ -1,11 +1,10 @@
-#./unrarall --skip-if-exists /media/Media/downloads/Movies
-#./unrarall --disable-cksfv --skip-if-exists /media/Media/downloads/Series
-./unrarall -v --disable-cksfv --skip-if-exists /input
-for i in $(seq 1 600); 
+#!/bin/bash
+# Switch to /tmp so it creates its temp directories there
+# Otherwise it tries the /src folder which it does not have write access to
+cd /tmp
+while true
 do
-if [ $(($i%60)) = 0 ]; then
-echo "Waiting for $i seconds";
-fi
-sleep 1;
+	echo "Sleeping ${DELAY} seconds"
+	sleep ${DELAY}
+	/src/unrarall -v --clean=${CLEANMODE} /input
 done
-./$0
