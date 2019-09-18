@@ -1,1 +1,1 @@
-docker build -t giejay/unrarall-arm .
+docker build -t grantemsley/unrarall .
