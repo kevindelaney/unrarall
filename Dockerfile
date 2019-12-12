@@ -11,7 +11,6 @@ RUN cd /src
 
 ENV CLEANMODE none
 ENV DELAY 900
-ENV SKIPEXISTS yes
 
 # Start the script
 CMD ["bash", "./unrar-script.sh"]
