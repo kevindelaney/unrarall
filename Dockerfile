@@ -9,8 +9,9 @@ WORKDIR /src/
 COPY . /src/
 RUN cd /src
 
-ENV CLEANMODE all
-ENV DELAY 60
+ENV CLEANMODE none
+ENV DELAY 900
+ENV SKIPEXISTS yes
 
 # Start the script
 CMD ["bash", "./unrar-script.sh"]
