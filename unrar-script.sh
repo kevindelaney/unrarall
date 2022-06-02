@@ -6,5 +6,5 @@ while true
 do
 	echo "Sleeping ${DELAY} seconds"
 	sleep ${DELAY}
-	/src/unrarall -v --clean=${CLEANMODE} --skip-if-exists /input
+	/src/unrarall -v --output /output --clean=${CLEANMODE} --skip-if-exists /input 
 done
