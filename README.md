@@ -10,7 +10,7 @@ Set the environment variable `CLEANMODE` to either `all` or `none`
 
 Set the environment variable `DELAY` to the number of seconds to wait between runs
 
-With --skip-if-exists
+With --skip-if-exists and output folder parameter
 
 
 
